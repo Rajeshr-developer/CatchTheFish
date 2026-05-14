@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(cd \"d:\\\\ReactPlayground\\\\CatchTheFish\"; $env:NODE_OPTIONS=\"--dns-result-order=ipv4first\"; npm install --save-dev webpack-cli@5 webpack-dev-server@4 babel-loader@9 --legacy-peer-deps 2>&1)",
+      "PowerShell(cd \"d:\\\\ReactPlayground\\\\CatchTheFish\"; $env:NODE_OPTIONS=\"--dns-result-order=ipv4first\"; npm install ajv@^8 --save-dev --legacy-peer-deps 2>&1)",
+      "PowerShell($proc = Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -First 1; if \\($proc\\) { Stop-Process -Id $proc -Force; Write-Host \"Killed PID $proc\" } else { Write-Host \"Nothing on port 3000\" })",
+      "PowerShell(cd \"d:\\\\ReactPlayground\\\\CatchTheFish\"; $env:NODE_OPTIONS=\"--dns-result-order=ipv4first\"; npm install react-native-web --legacy-peer-deps 2>&1)",
+      "PowerShell($proc = Get-NetTCPConnection -LocalPort 3001 -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -First 1; if \\($proc\\) { Stop-Process -Id $proc -Force; Write-Host \"Killed PID $proc\" } else { Write-Host \"Port 3001 is free\" })",
+      "PowerShell(@\\(3000, 3001\\) | ForEach-Object { $p = Get-NetTCPConnection -LocalPort $_ -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -First 1; if \\($p\\) { Stop-Process -Id $p -Force; \"Killed PID $p on port $_\" } })",
+      "PowerShell(cd \"d:\\\\ReactPlayground\\\\CatchTheFish\"; $env:NODE_OPTIONS=\"--dns-result-order=ipv4first\"; npm install react-dom@18.1.0 --legacy-peer-deps 2>&1)",
+      "PowerShell($p = Get-NetTCPConnection -LocalPort 8080 -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -First 1; if \\($p\\) { Stop-Process -Id $p -Force; \"Killed PID $p\" } else { \"Port 8080 free\" })",
+      "PowerShell(Get-ChildItem \"D:\\\\ReactPlayground\\\\CatchTheFish\\\\assets\" -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object FullName, Length)",
+      "PowerShell(Copy-Item \"D:\\\\ReactPlayground\\\\CatchTheFish\\\\assets\\\\Eating Fish Sprite sheet\\\\Eating Fish Sprite sheet\\\\Eating Fish-02\\\\Eating Fish Animation.png\" \"D:\\\\ReactPlayground\\\\CatchTheFish\\\\assets\\\\eating-anim.png\")",
+      "Bash(gh auth *)",
+      "PowerShell(gh auth status 2>&1)",
+      "PowerShell($env:NODE_OPTIONS=\"--dns-result-order=ipv4first\"; cd \"D:\\\\ReactPlayground\\\\CatchTheFish\"; npm install --save-dev cross-env 2>&1 | Select-Object -Last 10)",
+      "PowerShell($env:NODE_OPTIONS=\"--dns-result-order=ipv4first\"; cd \"D:\\\\ReactPlayground\\\\CatchTheFish\"; npm run build 2>&1)",
+      "PowerShell(New-Item -ItemType Directory -Force \"D:\\\\ReactPlayground\\\\CatchTheFish\\\\.github\\\\workflows\")"
+    ],
+    "additionalDirectories": [
+      "d:\\ReactPlayground\\CatchTheFish\\node_modules\\schema-utils\\node_modules\\ajv"
+    ]
+  }
+}

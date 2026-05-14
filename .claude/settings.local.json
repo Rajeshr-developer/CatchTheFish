@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem \"d:\\\\ReactPlayground\\\\CatchTheFish\" | Where-Object { $_.Name -ne \"node_modules\" } | Format-Table Name, PSIsContainer -AutoSize)"
+    ]
+  }
+}
